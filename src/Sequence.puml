@@ -1,0 +1,17 @@
+@startuml
+actor AttManager
+AttManager -> LoginFrame: 登录()
+activate AttManager
+activate LoginFrame
+LoginFrame -> LoginService: 提交用户信息()
+activate LoginService
+LoginService -> DataBase: 查询用户信息()
+activate DataBase
+LoginService<--DataBase:返回登录信息()
+deactivate DataBase
+LoginFrame<--LoginService:返回登录结果()
+deactivate LoginService
+AttManager <--LoginFrame:登录成功()
+deactivate LoginFrame
+deactivate AttManager
+@enduml
