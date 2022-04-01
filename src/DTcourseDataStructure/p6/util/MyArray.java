@@ -68,4 +68,54 @@ public class MyArray {
         }
         elements=newArr;
     }
+//    替换
+    public void replace(int index,int element){
+        if (index<0||index>elements.length-1){
+            throw new RuntimeException("下标越界");
+        }
+        elements[index]=element;
+    }
+//    查找
+    public int search(int target){
+//        目标元素
+//        int target=6;
+        int index=-1;
+//        遍历数组
+        for (int i = 0; i < elements.length; i++) {
+            if (elements[i]==target){
+                index=i;
+                break;
+            }
+        }
+        return index;
+    }
+//    二分查找
+    public int binarySearch(int target){
+//        目标元素
+//        int target=4;
+        int index=-1;
+//        开始定义中间开始结束
+        int begin=0;
+        int end=elements.length-1;
+        int mid=(begin+end)/2;
+        while (true){
+            if (begin>=end){
+                return -1;
+            }
+            if (elements[mid]==target){
+                index=mid;
+                break;
+            }
+            else {
+                if (target>elements[mid]){
+                    begin=mid+1;
+                }
+                else {
+                    end=mid-1;
+                }
+            }
+            mid=(begin+end)/2;
+        }
+        return index;
+    }
 }
