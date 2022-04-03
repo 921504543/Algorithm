@@ -14,5 +14,7 @@ public class MyLoopNode {
         System.out.println(loopNode1.next().next().next().getData());
         System.out.println(loopNode1.next().next().next().next().getData());
         System.out.println(loopNode1.next().next().next().next().next().getData());
+        System.out.println(Math.floor(2.1));
+
     }
 }
