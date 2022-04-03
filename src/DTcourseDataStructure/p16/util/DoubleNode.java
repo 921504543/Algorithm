@@ -1,5 +1,5 @@
 package DTcourseDataStructure.p16.util;
-
+//双循环链表
 public class DoubleNode {
     DoubleNode pre=this;
     DoubleNode next=this;
