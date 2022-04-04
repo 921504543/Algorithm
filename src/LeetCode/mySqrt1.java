@@ -1,5 +1,5 @@
 package LeetCode;
-
+import java.lang.Math;
 public class mySqrt1 {
     public int mySqrt(int x) {
         int begin=0;
