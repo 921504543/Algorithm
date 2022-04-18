@@ -44,4 +44,21 @@ public class TreeNode {
         }
         System.out.println(this.value);
     }
+    public TreeNode frontSearch(int i){
+        TreeNode target=null;
+        if (this.value==i){
+            return this;
+        }else{
+            if (this.lNode!=null){
+                target=this.lNode.frontSearch(i);
+            }
+            if (target!=null){
+                return target;
+            }
+            if (this.rNode!=null) {
+                target = this.rNode.frontSearch(i);
+            }
+        }
+        return target;
+    }
 }
