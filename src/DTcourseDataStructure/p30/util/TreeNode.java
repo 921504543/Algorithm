@@ -18,6 +18,7 @@ public class TreeNode {
     }
 //    归根到底是节点的遍历
     public void frontShow(){
+
         System.out.print(value);
         if(lNode!=null){
             lNode.frontShow();
@@ -60,5 +61,23 @@ public class TreeNode {
             }
         }
         return target;
+    }
+    public void delete(int i){
+        if (this.lNode!=null&&this.lNode.value==i){
+            this.lNode=null;
+            return;
+        }
+        if (this.rNode!=null&&this.rNode.value==i) {
+            this.rNode=null;
+            return;
+        }
+            TreeNode parent=this.lNode;
+        if (parent!=null) {
+            parent.delete(i);
+            }
+        parent=this.rNode;
+        if (parent!=null){
+            parent.delete(i);
+        }
     }
 }
